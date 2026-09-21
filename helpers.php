@@ -1,18 +1,18 @@
 <?php
-function rupiah(int $amount): string
-{
- return 'Rp ' . number_format($amount, 0, ',', '.');
+// helpers.php
+
+function rupiah(int|float $angka): string {
+    return 'Rp ' . number_format($angka, 0, ',', '.');
 }
-function statusKursus(int $quota, int $registered): string
-{
- return $registered >= $quota ? 'Penuh' : 'Tersedia';
+
+function statusKursus(int $kapasitas, int $terisi): string {
+    return ($terisi >= $kapasitas) ? 'Penuh' : 'Tersedia';
 }
-function sisaKursi(int $quota, int $registered): int
-{
- return max(0, $quota - $registered);
+
+function sisaKursi(int $kapasitas, int $terisi): int {
+    return max(0, $kapasitas - $terisi);
 }
-function formatTanggal(string $date): string
-{
- $value = new DateTimeImmutable($date);
- return $value->format('d-m-Y');
+
+function formatTanggal(string $tanggal): string {
+    return date('d-m-Y', strtotime($tanggal));
 }
