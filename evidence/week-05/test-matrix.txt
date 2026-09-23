@@ -1,0 +1,16 @@
+TEST MATRIX PENGUJIAN FORM KURSUSKU (WEEK 05)
+
+No | Test Name   | Langkah Pengujian                     | Hasil yang Diharapkan                   | Status
+---+-------------+---------------------------------------+-----------------------------------------+-------
+1  | Load Form   | Buka registration.php di browser      | Form tampil utuh tanpa error sintaks    | Lulus
+2  | Required    | Klik submit saat form masih kosong    | Browser menahan field wajib            | Lulus
+3  | Email       | Isi field email dengan 'abc'          | Browser meminta format email valid      | Lulus
+4  | Nama Pendek | Isi nama dengan 2 karakter            | Atribut minlength mencegah submit       | Lulus
+5  | GET Method  | Ganti method="GET" lalu kirim data    | Parameter data terlihat di query URL    | Lulus
+6  | POST Method | Kembalikan method="POST" lalu kirim   | Data dikirim via body, URL tetap bersih | Lulus
+7  | Radio       | Pilih jenis peserta Mahasiswa/Umum    | Nilai terpilih tampil di ringkasan      | Lulus
+8  | Checkbox    | Centang dua minat (misal: UI/UX & DB) | Kedua minat digabung dengan pemisah koma| Lulus
+9  | Textarea    | Isi catatan belajar                   | Catatan tampil dan di-escape fungsi e() | Lulus
+10 | Hidden      | Submit form pendaftaran               | Nilai sumber 'week-05' diterima sistem  | Lulus
+11 | Mobile Resp | Buka DevTools pada ukuran 360px       | Grid berubah 1 kolom, tidak overflow    | Lulus
+12 | Navigasi    | Klik Beranda -> Katalog -> Daftar     | Tautan berpindah antarhalaman lancar    | Lulus
