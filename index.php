@@ -34,7 +34,9 @@ $sampleCourses = [
 <html lang="id">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Evidence Status Kursus - KursusKu</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,6 +51,20 @@ $sampleCourses = [
             padding: 24px;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        nav[aria-label="Navigasi utama"] {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        nav[aria-label="Navigasi utama"] a {
+            text-decoration: none;
+            color: #0f766e;
+        }
+        nav[aria-label="Navigasi utama"] a:hover {
+            text-decoration: underline;
         }
         h2 {
             margin-top: 0;
@@ -88,6 +104,12 @@ $sampleCourses = [
 </head>
 <body>
 <div class="container">
+    <nav aria-label="Navigasi utama">
+        <a href="index.php"><strong>KursusKu</strong></a>
+        <a href="index.php#katalog">Katalog</a>
+        <a href="registration.php">Daftar Kursus</a>
+    </nav>
+
     <h2>Pemeriksaan Status Kursus & Sisa Kursi</h2>
     <p>Validasi pemanggilan fungsi <code>statusKursus()</code> dan <code>sisaKursi()</code> dari <code>helpers.php</code>:</p>
 
