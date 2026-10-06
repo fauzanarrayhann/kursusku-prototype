@@ -10,7 +10,6 @@ require_once __DIR__ . '/data.php';
     <title>Daftar Kursus - KursusKu</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Styling untuk pembungkus tombol aksi di bagian bawah form */
         .form-actions {
             display: flex;
             gap: 0.75rem;
@@ -66,11 +65,11 @@ require_once __DIR__ . '/data.php';
             <div class="form-grid">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
-                    <input id="name" name="name" type="text" minlength="3" maxlength="100" required>
+                    <input id="name" name="name" type="text" minlength="3" maxlength="100" required placeholder="Contoh: Bima Guru">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" name="email" type="email" maxlength="120" required>
+                    <input id="email" name="email" type="email" maxlength="120" required placeholder="bima@example.com">
                 </div>
                 <div class="form-group">
                     <label for="phone">Nomor HP</label>
@@ -94,6 +93,22 @@ require_once __DIR__ . '/data.php';
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
+
+            <!-- Tambahan: Metode Belajar & Jumlah Paket -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="method">Metode Belajar</label>
+                    <select id="method" name="method" required>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Online">Online</option>
+                        <option value="Tatap Muka">Tatap Muka</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="package_count">Jumlah Paket</label>
+                    <input id="package_count" name="package_count" type="number" min="1" max="10" value="1" required>
+                </div>
             </div>
 
             <!-- Radio Button Jenis Peserta -->
@@ -132,7 +147,7 @@ require_once __DIR__ . '/data.php';
 
             <div class="form-group">
                 <label for="note">Catatan Tambahan</label>
-                <textarea id="note" name="note" rows="4" maxlength="300"></textarea>
+                <textarea id="note" name="note" rows="4" maxlength="300" placeholder="Fokus PHP."></textarea>
             </div>
 
             <!-- Tombol Utama dan Tombol Tambahan Bersandingan -->
