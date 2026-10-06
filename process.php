@@ -9,11 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Ambil & bersihkan input dari form registration.php
-$name = trim($_POST['name'] ?? 'Bima Guru');
-$email = trim($_POST['email'] ?? 'bima@example.com');
+// Ambil & bersihkan input dari form
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
 $courseCode = $_POST['course'] ?? '';
-$participantType = $_POST['participant_type'] ?? 'guru';
+$participantType = $_POST['participant_type'] ?? 'mahasiswa';
 $method = $_POST['method'] ?? 'Hybrid';
 $packageCount = (int)($_POST['package_count'] ?? 1);
 $interests = $_POST['interests'] ?? [];
@@ -29,11 +29,11 @@ foreach ($courses as $c) {
     }
 }
 
-// Fallback data jika tidak ketemu
-$courseName = $selectedCourse ? $selectedCourse['name'] : 'PHP Dasar';
-$unitPrice = $selectedCourse ? $selectedCourse['fee'] : 400000;
+// Fallback data jika testing langsung
+$courseName = $selectedCourse ? $selectedCourse['name'] : 'Web Dasar';
+$unitPrice = $selectedCourse ? $selectedCourse['fee'] : 300000;
 
-// Kalkulasi Biaya & Diskon (Mahasiswa 20%, Guru 15%, Umum 0%)
+// Kalkulasi Subtotal, Diskon (Mahasiswa 20%, Guru 15%, Umum 0%), dan Total
 $subtotal = $unitPrice * max(1, $packageCount);
 $discountData = hitungDiskon($participantType, $subtotal);
 $grandTotal = $discountData['total'];
@@ -163,6 +163,16 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
             font-size: 0.875rem;
             padding: 0.4rem 1rem;
             border-radius: 9999px;
+            margin-right: 0.5rem;
+        }
+
+        /* Tampilan Kotak jika Minat Kosong */
+        .empty-box {
+            background-color: #ecfdf5;
+            color: #047857;
+            padding: 0.85rem 1.25rem;
+            border-radius: 0.75rem;
+            font-size: 0.95rem;
         }
 
         /* Daftar Poin Fasilitas */
@@ -179,7 +189,7 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
             font-size: 0.95rem;
         }
 
-        /* Tombol Aksi */
+        /* Tombol Navigasi */
         .action-group {
             display: flex;
             gap: 0.75rem;
@@ -195,7 +205,6 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
             text-decoration: none;
             font-size: 0.9rem;
             border: none;
-            cursor: pointer;
         }
 
         .btn-outline-custom {
@@ -274,7 +283,7 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
         </tr>
     </table>
 
-    <!-- Minat -->
+    <!-- Section Minat (Percabangan Minat Kosong vs Ada) -->
     <h2 class="section-heading">Minat</h2>
     <div>
         <?php if (!empty($interestLabels)): ?>
@@ -282,7 +291,7 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
                 <span class="interest-badge"><?= e($interest) ?></span>
             <?php endforeach; ?>
         <?php else: ?>
-            <span class="interest-badge">Backend</span>
+            <div class="empty-box">Belum memilih minat.</div>
         <?php endif; ?>
     </div>
 
@@ -302,7 +311,7 @@ $facilityLabels = array_map(function($key) use ($facilities_list) {
 
     <!-- Catatan -->
     <h2 class="section-heading">Catatan</h2>
-    <p class="note-text"><?= !empty($note) ? e($note) : 'Fokus PHP.' ?></p>
+    <p class="note-text"><?= !empty($note) ? e($note) : 'Tidak ada catatan tambahan.' ?></p>
 
     <!-- Tombol Navigasi -->
     <div class="action-group">
