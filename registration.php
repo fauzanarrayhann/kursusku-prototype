@@ -9,6 +9,33 @@ require_once __DIR__ . '/data.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daftar Kursus - KursusKu</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Styling tambahan untuk tombol navigasi cepat */
+        .quick-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1.5px solid var(--brand, #0f766e);
+            border-radius: 0.6rem;
+            color: var(--brand, #0f766e);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .btn-outline:hover {
+            background: var(--soft, #eef8f5);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 <header class="site-header">
@@ -17,7 +44,7 @@ require_once __DIR__ . '/data.php';
         <nav aria-label="Navigasi utama">
             <a href="index.php">Beranda</a>
             <a href="index.php#katalog">Katalog</a>
-            <a href="registration.php">Daftar</a>
+            <a href="registration.php"><strong>Daftar</strong></a>
             <a href="history.php">Riwayat Pendaftaran</a>
             <a href="loop-lab.php">Loop Lab</a>
         </nav>
@@ -29,6 +56,16 @@ require_once __DIR__ . '/data.php';
         <p class="eyebrow">Pendaftaran Kursus (Pertemuan 6)</p>
         <h1>Form Pendaftaran KursusKu</h1>
         <p>Silakan isi data lengkap di bawah ini.</p>
+        
+        <!-- Tombol Akses Cepat ke History Dummy dan Loop Lab -->
+        <div class="quick-nav">
+            <a href="history.php" class="btn-outline">
+                📋 Lihat Riwayat Pendaftaran (Dummy)
+            </a>
+            <a href="loop-lab.php" class="btn-outline">
+                🔄 Uji Perulangan (Loop Lab)
+            </a>
+        </div>
     </section>
 
     <section class="form-card">
