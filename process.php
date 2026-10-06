@@ -1,5 +1,7 @@
 <?php
 // process.php
+session_start(); // Aktifkan session untuk menyimpan riwayat pendaftaran
+
 require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/data.php';
 
@@ -37,6 +39,13 @@ $unitPrice = $selectedCourse ? $selectedCourse['fee'] : 300000;
 $subtotal = $unitPrice * max(1, $packageCount);
 $discountData = hitungDiskon($participantType, $subtotal);
 $grandTotal = $discountData['total'];
+
+// SIMPAN OTOAMATIS KE SESSION HISTORY TIAP SUBMIT FORM
+$_SESSION['history'][] = [
+    'nama' => $name !== '' ? $name : 'Pengguna Baru',
+    'kursus' => $courseName,
+    'total' => $grandTotal
+];
 
 // Pemetaan Minat & Fasilitas
 $interestLabels = array_map(function($key) use ($interests_list) {
