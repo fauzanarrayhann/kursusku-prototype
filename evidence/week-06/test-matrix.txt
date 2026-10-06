@@ -1,0 +1,16 @@
+=====================================================
+TEST MATRIX PERTEMUAN 6 - KURSUSKU PROTOTYPE
+=====================================================
+
+1. Select Kursus Rendered          : [PASS] - Pilihan dirender dinamis dari data.php
+2. Status Kursus Penuh Disabled    : [PASS] - Option Laravel Fundamental disabled karena kuota penuh
+3. Checkbox Minat Loop             : [PASS] - Menampilkan opsi minat dari $interests_list
+4. Checkbox Fasilitas Loop         : [PASS] - Menampilkan opsi fasilitas dari $facilities_list
+5. Branching Diskon Mahasiswa      : [PASS] - Dipotong diskon 20%
+6. Branching Diskon Guru           : [PASS] - Dipotong diskon 15%
+7. Branching Diskon Umum           : [PASS] - Diskon 0%
+8. Aritmatika Total + Admin        : [PASS] - Total = (Subtotal - Diskon) + Admin Fee
+9. Process Page Array Mapping      : [PASS] - Menampilkan label dari array terpilih
+10. History Loop Render            : [PASS] - Menampilkan tabel dari array $registrations_dummy
+11. Loop Lab For, While, Do-While  : [PASS] - Ketiga perulangan berfungsi tanpa infinite loop
+12. Form Validation Server-side    : [PASS] - Redirect jika data tidak valid / langsung via GET
