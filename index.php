@@ -272,6 +272,8 @@ $courses = [
       <a href="index.php"><strong>Beranda</strong></a>
       <a href="#katalog">Katalog Kursus</a>
       <a href="fee-calculator.php">Kalkulator Biaya</a>
+      <a href="history.php">Riwayat Pendaftaran</a>
+      <a href="loop-lab.php">Loop Lab</a>
       <a href="registration.php" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.9rem;">Daftar Kursus</a>
     </nav>
   </div>
