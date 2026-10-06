@@ -10,28 +10,29 @@ require_once __DIR__ . '/data.php';
     <title>Daftar Kursus - KursusKu</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Styling tambahan untuk tombol navigasi cepat */
-        .quick-nav {
+        /* Styling untuk pembungkus tombol aksi di bagian bawah form */
+        .form-actions {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+            align-items: center;
             flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
-        .btn-outline {
+        .btn-secondary-action {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
+            justify-content: center;
+            padding: 0.8rem 1.1rem;
             border: 1.5px solid var(--brand, #0f766e);
-            border-radius: 0.6rem;
+            border-radius: 0.7rem;
             color: var(--brand, #0f766e);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
             background: #ffffff;
             transition: all 0.2s ease;
         }
-        .btn-outline:hover {
+        .btn-secondary-action:hover {
             background: var(--soft, #eef8f5);
             transform: translateY(-2px);
         }
@@ -56,16 +57,6 @@ require_once __DIR__ . '/data.php';
         <p class="eyebrow">Pendaftaran Kursus (Pertemuan 6)</p>
         <h1>Form Pendaftaran KursusKu</h1>
         <p>Silakan isi data lengkap di bawah ini.</p>
-        
-        <!-- Tombol Akses Cepat ke History Dummy dan Loop Lab -->
-        <div class="quick-nav">
-            <a href="history.php" class="btn-outline">
-                📋 Lihat Riwayat Pendaftaran (Dummy)
-            </a>
-            <a href="loop-lab.php" class="btn-outline">
-                🔄 Uji Perulangan (Loop Lab)
-            </a>
-        </div>
     </section>
 
     <section class="form-card">
@@ -144,7 +135,12 @@ require_once __DIR__ . '/data.php';
                 <textarea id="note" name="note" rows="4" maxlength="300"></textarea>
             </div>
 
-            <button class="btn-primary" type="submit">Proses Pendaftaran</button>
+            <!-- Tombol Utama dan Tombol Tambahan Bersandingan -->
+            <div class="form-actions">
+                <button class="btn-primary" type="submit">Proses Pendaftaran</button>
+                <a href="history.php" class="btn-secondary-action">Lihat Riwayat (Dummy)</a>
+                <a href="loop-lab.php" class="btn-secondary-action">Uji Loop Lab</a>
+            </div>
         </form>
     </section>
 </main>
