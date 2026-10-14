@@ -59,7 +59,7 @@ require_once __DIR__ . '/data.php';
     </section>
 
     <section class="form-card">
-        <form action="process.php" method="GET" class="registration-form">
+        <form action="process.php" method="POST" class="registration-form">
             <input type="hidden" name="source" value="week-06">
 
             <div class="form-grid">
