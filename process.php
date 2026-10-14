@@ -22,6 +22,16 @@ $interests = $_POST['interests'] ?? [];
 $facilities = $_POST['facilities'] ?? [];
 $note = trim($_POST['note'] ?? '');
 
+// Validasi input form & set HTTP Response Code 422
+$errors = [];
+if (empty($name) || strlen($name) < 3 || empty($email)) {
+    $errors[] = 'Input tidak valid.';
+}
+
+if (!empty($errors)) {
+    http_response_code(422);
+}
+
 // Cari data kursus terpilih dari data.php
 $selectedCourse = null;
 foreach ($courses as $c) {
