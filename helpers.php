@@ -32,7 +32,18 @@ function formatRupiah(int $amount): string
     return rupiah($amount);
 }
 
-// Helper perhitungan diskon Pertemuan 6
+// Helper pencarian kursus (Soal No. 30)
+function findCourse(array $courses, string $code): ?array
+{
+    foreach ($courses as $course) {
+        if ($course['code'] === $code) {
+            return $course;
+        }
+    }
+    return null;
+}
+
+// Helper perhitungan diskon
 function hitungDiskon(string $participantType, int $subtotal): array
 {
     $discountPercent = 0;
