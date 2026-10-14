@@ -8,6 +8,7 @@
   --line: #d9e6e2;
 }
 
+/* Perbaikan selector universal */
 * {
   box-sizing: border-box;
 }
@@ -178,6 +179,57 @@ textarea:focus {
   word-break: break-word;
 }
 
+/* ==============================================
+   Styling Tambahan untuk Halaman Waktu Server & Utility
+   ============================================== */
+
+/* Badge hijau berbentuk kapsul (Pertemuan 2) */
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+}
+
+.eyebrow-badge::before {
+  content: "•";
+  margin-right: 0.4rem;
+  font-size: 1.1rem;
+}
+
+/* Kotak Penampil Waktu Server */
+.server-time-box {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--brand);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.time-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--brand-dark);
+  margin-top: 0.3rem;
+  letter-spacing: 1px;
+}
+
+/* Format tag code */
+code {
+  background: #e2ece9;
+  color: var(--brand-dark);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+
 /* Responsif Mobile (maks 640px) */
 @media (max-width: 640px) {
   .nav-wrap {
@@ -201,75 +253,4 @@ textarea:focus {
   .summary-list dt {
     margin-top: 0.5rem;
   }
-
-  /* Perbaikan selector universal */
-* {
-  box-sizing: border-box;
-}
-
-/* Styling Khusus Utility Page & Server Time */
-.utility-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.utility-card {
-  max-width: 520px;
-  width: 100%;
-  padding: 2rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.utility-card h1 {
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: var(--text);
-}
-
-.server-time {
-  background: var(--soft);
-  border-left: 4px solid var(--brand);
-  padding: 0.85rem 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.server-time strong {
-  font-family: monospace;
-  font-size: 1.05rem;
-  color: var(--brand-dark);
-}
-
-code {
-  background: var(--soft);
-  color: var(--brand-dark);
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.35rem;
-  font-size: 0.9em;
-}
-
-.button {
-  display: inline-block;
-  border: 0;
-  border-radius: 0.7rem;
-  padding: 0.8rem 1.1rem;
-  background: var(--brand);
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.button:hover {
-  background: var(--brand-dark);
-}
 }
