@@ -3,16 +3,6 @@ declare(strict_types=1);
 require_once __DIR__ . '/data.php';
 require_once __DIR__ . '/helpers.php';
 ?>
-
-require_once __DIR__ . '/helpers.php';
-require_once __DIR__ . '/data.php';
-?>
-
-declare(strict_types=1);
-
-require __DIR__ . '/data.php';
-require __DIR__ . '/helpers.php';
-?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -45,7 +35,7 @@ require __DIR__ . '/helpers.php';
                 <option value="">-- Pilih kursus --</option>
                 <?php foreach ($courses as $course): ?>
                     <option value="<?= e($course['code']) ?>">
-                        <?= e($course['name']) ?> - <?= formatRupiah($course['fee']) ?>
+                        <?= e($course['name']) ?> - <?= rupiah($course['fee']) ?>
                     </option>
                 <?php endforeach; ?>
             </select>
