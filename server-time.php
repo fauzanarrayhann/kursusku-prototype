@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+date_default_timezone_set('Asia/Jakarta');
 $serverTime = date('Y-m-d H:i:s');
 ?>
 <!doctype html>
