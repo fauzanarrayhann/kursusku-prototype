@@ -1,6 +1,6 @@
 <?php
 $quota = 30;
-$registered = 30;
+$registered = 18;
 $isFull = $registered >= $quota;
 $hasSeat = $registered < $quota;
 var_dump($isFull);
