@@ -32,7 +32,18 @@ function formatRupiah(int $amount): string
     return rupiah($amount);
 }
 
-// Helper pencarian kursus (Soal No. 30)
+// Helper pemetaan mode belajar (Soal No. 20)
+function getLearningModeLabel(string $mode): string
+{
+    $modes = [
+        'offline' => 'Tatap muka',
+        'online'  => 'Online',
+        'hybrid'  => 'Hybrid',
+    ];
+
+    return $modes[$mode] ?? $mode;
+}
+
 function findCourse(array $courses, string $code): ?array
 {
     foreach ($courses as $course) {
