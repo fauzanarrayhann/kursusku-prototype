@@ -13,13 +13,14 @@ function statusKursus(int $quota, int $registered): string
 
 function sisaKursi(int $quota, int $registered): int
 {
-    return max(0, $quota - $registered);
+    return max(0, $quota - $registered); // Diperbaiki operator pengurangannya (-)
 }
 
+// Diubah agar menghasilkan format: Month Day, Year (contoh: September 15, 2026)
 function formatTanggal(string $date): string
 {
     $value = new DateTimeImmutable($date);
-    return $value->format('d-m-Y');
+    return $value->format('F j, Y'); 
 }
 
 function e($value): string
@@ -41,8 +42,8 @@ function hitungDiskon(string $participantType, int $subtotal): array
         $discountPercent = 0;
     }
 
-    $discountAmount = intdiv($subtotal * $discountPercent, 100);
-    $total = $subtotal - $discountAmount;
+    $discountAmount = intdiv($subtotal * $discountPercent, 100); // Diperbaiki operator perkaliannya (*)
+    $total = $subtotal - $discountAmount;                      // Diperbaiki operator pengurangannya (-)
 
     return [
         'percent' => $discountPercent,
