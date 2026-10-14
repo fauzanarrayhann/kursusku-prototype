@@ -28,9 +28,9 @@ $courses = [
     ],
     [
         'code' => 'LAR-01',
-        'name' => 'Laravel Fundamental',
-        'fee' => 350000,
-        'quota' => 25,
+        'name' => 'Laravel Dasar',
+        'fee' => 500000,
+        'quota' => 30,
         'registered' => 25,
         'start_date' => '2026-09-28'
     ],
