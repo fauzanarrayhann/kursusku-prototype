@@ -27,6 +27,11 @@ function e($value): string
     return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 }
 
+function formatRupiah(int $amount): string
+{
+    return rupiah($amount);
+}
+
 // Helper perhitungan diskon Pertemuan 6
 function hitungDiskon(string $participantType, int $subtotal): array
 {
